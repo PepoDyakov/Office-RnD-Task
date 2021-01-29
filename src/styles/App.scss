@@ -1,0 +1,8 @@
+@import "./consts/colors.scss";
+@import "./mixins/flex.scss";
+@import "./mixins/size.scss";
+
+.App {
+  @include size(100%, 100%);
+  padding: 27px 23px;
+}

@@ -1,0 +1,32 @@
+@import "../../mixins/Flex.scss";
+@import "../../mixins/Font.scss";
+@import "../../mixins/Size.scss";
+@import "../../consts/colors.scss";
+@import "./TableContent.scss";
+
+.table-header {
+    width: 100%;
+    margin-bottom: 14px;
+}
+
+.table-header-row {
+    @include flex(row, flex-start, center);
+
+    & > .table-cell {
+        &:first-child {
+            width: auto;
+        }
+
+        &:not(:last-child) {
+            margin-right: 43px;
+        }
+    }
+}
+
+.table-filters {
+    border: none;
+    & > .table-cell {
+        font-weight: $medium;
+        text-transform: uppercase;
+    }
+}

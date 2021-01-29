@@ -1,0 +1,46 @@
+@import "../mixins/flex.scss";
+@import "../mixins/font.scss";
+@import "../mixins/size.scss";
+@import "../consts/colors.scss";
+
+.filter {
+    @include flex(row, flex-start, center);
+    position: relative;
+    padding: 9px 0;
+
+    &:not(:last-child) {
+        margin-right: 27px;
+    }    
+
+    &:hover {
+        & > .filter-marker {
+            visibility: visible;
+        }
+    }
+}
+
+.filter-marker {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    @include size(100%, 2px);
+    background-color: $filter;
+    border-radius: 2px;
+    visibility: hidden;
+}
+
+.filter-active {
+    color: $blue;
+    border-color: $blue;
+    font-weight: $medium;
+
+    & > .filter-marker {
+        visibility: visible;
+        background-color: $blue;
+    }
+}
+
+.filter-number {
+    font-weight: $medium;
+    margin-left: 4px;
+}

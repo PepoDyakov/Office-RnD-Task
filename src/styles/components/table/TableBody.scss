@@ -1,0 +1,13 @@
+@import "../../mixins/Flex.scss";
+@import "../../mixins/Font.scss";
+@import "../../mixins/Size.scss";
+@import "../../consts/colors.scss";
+@import "./TableContent.scss";
+
+.table-body {
+    width: 100%;
+
+    & > .table-row {
+        height: 81px;
+    }
+}

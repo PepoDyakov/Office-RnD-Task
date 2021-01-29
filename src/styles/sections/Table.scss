@@ -1,0 +1,13 @@
+@import "../mixins/flex.scss";
+@import "../mixins/font.scss";
+@import "../mixins/size.scss";
+@import "../consts/colors.scss";
+
+.table-container {
+    height: 100%;
+    margin-top: 27px;
+    padding: 22px 20px;
+    background-color: $white;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+}

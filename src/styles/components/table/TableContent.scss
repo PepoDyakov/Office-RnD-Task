@@ -1,0 +1,9 @@
+@import "../../mixins/flex.scss";
+@import "../../mixins/font.scss";
+@import "../../mixins/size.scss";
+@import "../../consts/colors.scss";
+
+.table {
+    @include flex(column, flex-start, flex-start);
+    @include font("Source Sans Pro", 15px, $regular, 20px, left, $dark-grey);
+}
