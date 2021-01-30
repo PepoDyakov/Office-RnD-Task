@@ -9,14 +9,20 @@
     @include flex(row, flex-start, center);
     background-color: $blue;
     border-radius: 3px;
+
+    &:hover {
+        cursor: pointer;
+        opacity: 0.8;
+    }
 }
 
 .button-text {
     width: 100%;
-    @include font('Source Sans Pro', $height: 20px);
+    @include font("Source Sans Pro", $height: 20px);
     text-align: center;
     color: $white;
     padding: 8px;
+    user-select: none;
 }
 
 .danger {

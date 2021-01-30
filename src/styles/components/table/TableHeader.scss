@@ -11,14 +11,20 @@
 
 .table-header-row {
     @include flex(row, flex-start, center);
+    padding: 0 22px;
 
     & > .table-cell {
+        font-weight: 600;
         &:first-child {
             width: auto;
         }
 
         &:not(:last-child) {
             margin-right: 43px;
+        }
+
+        &:last-child {
+            margin-right: 0;
         }
     }
 }

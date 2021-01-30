@@ -6,6 +6,8 @@
 
 .table-row {
     @include flex(row, flex-start, center);
+    position: relative;
+    padding: 0 22px;
 
     & > .table-cell {
         &:first-child {
@@ -15,9 +17,21 @@
         &:not(:last-child) {
             margin-right: 43px;
         }
+
+        &:last-child {
+            margin-right: 0;
+        }
     }
 
-    border-bottom: 1px solid $off-white;
+    &::before {
+        width: calc(100% - 40px);
+        content: " ";
+        position: absolute;
+        left: 20px;
+        bottom: 0;
+        height: 1px;
+        background: $off-white;
+    }
 }
 
 .table-cell {
@@ -28,6 +42,10 @@
 
 .row-selector {
     @include size(16px, 16px);
+
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 .member-photo {
@@ -43,4 +61,8 @@
 
 .cell-text {
     color: $base;
+}
+
+.selected {
+    background-color: $selected-row;
 }

@@ -7,12 +7,14 @@
     @include flex(row, flex-start, center);
     position: relative;
     padding: 9px 0;
+    user-select: none;
 
     &:not(:last-child) {
         margin-right: 27px;
-    }    
+    }
 
     &:hover {
+        cursor: pointer;
         & > .filter-marker {
             visibility: visible;
         }
@@ -27,6 +29,7 @@
     background-color: $filter;
     border-radius: 2px;
     visibility: hidden;
+    user-select: none;
 }
 
 .filter-active {
@@ -43,4 +46,5 @@
 .filter-number {
     font-weight: $medium;
     margin-left: 4px;
+    user-select: none;
 }

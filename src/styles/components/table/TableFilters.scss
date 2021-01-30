@@ -1,0 +1,26 @@
+@import "../../mixins/flex.scss";
+@import "../../mixins/font.scss";
+@import "../../mixins/size.scss";
+@import "../../consts/colors.scss";
+
+.table-fitlers-container {
+    @include flex(column, flex-start, flex-start);
+    padding: 0 22px;
+    margin-bottom: 54px;
+}
+
+.table-filters-actions {
+    @include flex(row, flex-start, center);
+}
+
+.search-results {
+    @include font(
+        "Source Sans Pro",
+        14px,
+        $regular,
+        17px,
+        left,
+        $dark-graphite
+    );
+    margin-top: 14px;
+}

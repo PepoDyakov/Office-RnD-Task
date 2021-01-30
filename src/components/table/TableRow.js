@@ -1,13 +1,20 @@
 import ProfilePhoto from "../../assets/profile-picture.png";
 
 import LocationIcon from "../../assets/location-icon.png";
+import classNames from "classnames";
+
+import Label from "../Label";
 import parseDate from "../../utils/parseDate";
 
 import "../../styles/components/table/TableRow.scss";
 
 export default function TableRow(props) {
+    let rowClassNames = classNames({
+        selected: !!props.selected,
+    });
+
     return (
-        <tr className="table-row">
+        <tr className={`table-row ${rowClassNames}`}>
             <td className="table-cell ">
                 <input type="checkbox" className="row-selector" />
             </td>
@@ -23,7 +30,8 @@ export default function TableRow(props) {
                 <p className="cell-text">Monster Energy Racing</p>
             </td>
             <td className="table-cell">
-                <p className="cell-text">Active New</p>
+                <Label active>Active</Label>
+                <Label>New</Label>
             </td>
             <td className="table-cell">
                 <p className="cell-text">{parseDate(Date.now())}</p>

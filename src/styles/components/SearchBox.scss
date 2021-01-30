@@ -1,0 +1,32 @@
+@import "../mixins/flex.scss";
+@import "../mixins/font.scss";
+@import "../mixins/size.scss";
+@import "../consts/colors.scss";
+
+.search-box-container {
+    @include flex(row, flex-start, center);
+    @include size(147px, 34px);
+    background-color: $gradient-end;
+    border: 1px solid $light-border;
+    border-radius: 3px;
+    padding: 10px 12px;
+    margin-right: 12px;
+}
+
+.search-box-input {
+    @include font("Source Sans Pro", 14px, $regular, 20px, left, $base);
+    background-color: $gradient-end;
+    border: none;
+    flex-shrink: 1;
+    width: 100%;
+
+    &:hover {
+        cursor: text;
+    }
+}
+
+.search-icon {
+    width: 12px;
+    margin-right: 6px;
+    pointer-events: none;
+}

@@ -1,0 +1,27 @@
+@import "../mixins/flex.scss";
+@import "../mixins/font.scss";
+@import "../mixins/size.scss";
+@import "../consts/colors.scss";
+
+.label-container {
+    @include flex(row, flex-start, center);
+    background: $new;
+    border-radius: 3px;
+    padding: 0 6px;
+
+    &:not(:last-child) {
+        margin-right: 6px;
+    }
+}
+
+.label-text {
+    @include font("Source Code Pro", 12px, 500, 20px, center, $deep-blue);
+}
+
+.active {
+    background-color: $active;
+
+    & > .label-text {
+        color: $green;
+    }
+}
