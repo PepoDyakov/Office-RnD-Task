@@ -1,13 +1,16 @@
 import TableRow from "./TableRow";
 
 import "../../styles/components/table/TableBody.scss";
+import { observer } from "mobx-react-lite";
 
-export default function TableBody(props) {
+const TableBody = observer(({ members }) => {
     return (
         <tbody className="table-body">
-            <TableRow selected />
-            <TableRow />
-            <TableRow />
+            {members.map((member) => (
+                <TableRow member={member} key={member._id} />
+            ))}
         </tbody>
     );
-}
+});
+
+export default TableBody;

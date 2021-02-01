@@ -1,0 +1,66 @@
+@import "../mixins/flex.scss";
+@import "../mixins/font.scss";
+@import "../mixins/size.scss";
+@import "../consts/colors.scss";
+
+.dropdown-container {
+    @include flex(column, flex-start, flex-start);
+    position: relative;
+    width: 100%;
+    min-width: 189px;
+    @include font("Source Sans Pro", 14px, $regular, 20px, left, $base);
+    z-index: 2;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.dropdown-label {
+    @include font("Source Sans Pro", 14px, $regular, 20px, left, $form-text);
+    margin-bottom: 5px;
+}
+
+.dropdown-select-wrapper {
+    @include size(100%, 34px);
+    @include flex(row, flex-start, center);
+    position: relative;
+    border: 1px solid $light-border;
+    border-radius: 2px;
+    padding: 6px 11px;
+}
+
+.form {
+    border-radius: 6px;
+    box-shadow: 0px 1.4px 2px rgba(203, 203, 207, 0.5);
+}
+
+.dropdown-select {
+    @include flex(row, flex-start, center);
+    flex-shrink: 1;
+    @include size(100%, 100%);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    @include font("Source Sans Pro", 14px, $regular, 20px, left, $base);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.side-label {
+    margin-right: 10px;
+    @include font("Source Sans Pro", 14px, $regular, 19px, left, $grey);
+    text-transform: uppercase;
+    opacity: 0.5;
+    user-select: none;
+}
+
+.dropdown-icon {
+    @include size(15px, 7px);
+    user-select: none;
+}

@@ -1,0 +1,58 @@
+@import "../mixins/flex.scss";
+@import "../mixins/font.scss";
+@import "../mixins/size.scss";
+@import "../consts/colors.scss";
+
+.modal-container {
+    position: absolute;
+    left: calc(50% - 300px);
+    top: calc(50% - 250px);
+    z-index: 999;
+    @include flex(column, flex-start, flex-start);
+    @include size(600px, 500px);
+    background-color: $white;
+    box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+    opacity: 0;
+    transform: translateY(-100vh);
+    transition: opacity 300ms ease-in-out;
+}
+
+.open {
+    opacity: 1;
+    transform: translateY(0vh);
+}
+
+.modal-header {
+    @include size(100%, 67px);
+    padding: 23px 36px 17px 36px;
+    @include font("Montserrat", 16px, $medium, 24px, left, $base);
+    border-bottom: 1px solid $modal-border;
+}
+
+.modal-form-container {
+    @include size(100%, 100%);
+    padding: 23px 36px 17px 36px;
+}
+
+.modal-form {
+    @include size(100%, auto);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, auto);
+    column-gap: 36px;
+    row-gap: 16px;
+}
+
+.modal-footer {
+    @include size(100%, 69px);
+    @include flex(row, flex-end, center);
+    padding: 15px 36px 20px 36px;
+    border-top: 1px solid $modal-border;
+
+    & > .button-container {
+        &:first-child {
+            margin-right: 13px;
+        }
+    }
+}

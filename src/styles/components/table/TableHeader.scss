@@ -14,6 +14,7 @@
     padding: 0 22px;
 
     & > .table-cell {
+        user-select: none;
         font-weight: 600;
         &:first-child {
             width: auto;
@@ -34,5 +35,37 @@
     & > .table-cell {
         font-weight: $medium;
         text-transform: uppercase;
+    }
+}
+
+.sort-cell {
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.sort-cell-wrapper {
+    @include flex(row, flex-start, center);
+}
+
+.sort-arrow-wrapper {
+    @include flex(column, flex-start, flex-start);
+    height: 100%;
+    margin-left: 6px;
+}
+
+.sort-asc {
+    transform: rotate(0deg);
+}
+
+.sort-desc {
+    transform: rotate(180deg);
+}
+
+.sort-arrow {
+    @include size(14px, 8px);
+
+    &:first-child {
+        margin-bottom: 2px;
     }
 }

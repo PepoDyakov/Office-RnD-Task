@@ -2,7 +2,7 @@ import classNames from "classnames";
 
 import "../styles/components/Label.scss";
 
-export default function Label(props) {
+const Label = (props) => {
     let additionalClasses = classNames({
         active: !!props.active,
     });
@@ -11,4 +11,6 @@ export default function Label(props) {
             <p className="label-text">{props.children}</p>
         </div>
     );
-}
+};
+
+export default Label;

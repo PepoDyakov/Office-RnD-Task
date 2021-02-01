@@ -4,11 +4,11 @@
 @import "../consts/colors.scss";
 
 .button-container {
-    min-width: 107px;
-    height: 36px;
     @include flex(row, flex-start, center);
-    background-color: $blue;
+    min-width: 76px;
+    height: 36px;
     border-radius: 3px;
+    background-color: $white;
 
     &:hover {
         cursor: pointer;
@@ -20,11 +20,31 @@
     width: 100%;
     @include font("Source Sans Pro", $height: 20px);
     text-align: center;
-    color: $white;
-    padding: 8px;
+    color: $base;
+    padding: 8px 16px;
+    border: 1px solid $form-button-border;
+    border-radius: 2px;
     user-select: none;
+}
+
+.action {
+    background-color: $blue;
+
+    & > .button-text {
+        color: $white;
+        border: none;
+    }
+
+    border: none;
 }
 
 .danger {
     background-color: $red;
+
+    & > .button-text {
+        color: $white;
+        border: none;
+    }
+
+    border: none;
 }

@@ -55,6 +55,14 @@
     margin-right: 17px;
 }
 
+.blank-member-photo {
+    @include size(36px, 36px);
+    background: $gradient-end;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 17px;
+}
+
 .location-icon {
     margin-right: 11px;
 }

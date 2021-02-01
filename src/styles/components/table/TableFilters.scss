@@ -11,6 +11,12 @@
 
 .table-filters-actions {
     @include flex(row, flex-start, center);
+
+    & > .dropdown-container {
+        &:not(:last-child) {
+            margin-right: 12px;
+        }
+    }
 }
 
 .search-results {

@@ -1,59 +1,49 @@
-import DropdownFilter from "../DropdownFilter";
+import { useContext } from "react";
+import { observer } from "mobx-react-lite";
+
+import { Context } from "../../App";
+
+import Dropdown from "../Dropdown";
 import SearchBox from "../SearchBox";
 
 import "../../styles/components/table/TableFilters.scss";
 
-const initialState = {
-    isListOpen: false,
-    selectedOption: {
-        id: -1,
-        title: "All",
-    },
-    locations: [
-        {
-            id: 0,
-            title: "New York",
-            key: "location",
-        },
-        {
-            id: 1,
-            title: "Dublin",
-            key: "location",
-        },
-        {
-            id: 2,
-            title: "California",
-            key: "location",
-        },
-        {
-            id: 3,
-            title: "Istanbul",
-            key: "location",
-        },
-        {
-            id: 4,
-            title: "Izmir",
-            key: "location",
-        },
-        {
-            id: 5,
-            title: "Oslo",
-            key: "location",
-        },
-    ],
-};
+const TableFilters = observer((props) => {
+    const store = useContext(Context);
+    const { teams, locations, tableFilters } = store.state;
 
-export default function TableFilters(props) {
     return (
         <div className="table-fitlers-container">
             <div className="table-filters-actions">
-                <SearchBox />
-                <DropdownFilter placeholder="Location" selection="London HQ" />
-                <DropdownFilter placeholder="Company" selection="All" />
+                <SearchBox
+                    value={tableFilters.searchValue}
+                    onChange={(ev) =>
+                        store.handleSearchMembers(ev.target.value)
+                    }
+                />
+                <Dropdown
+                    label="Location:"
+                    list={locations}
+                    name="location"
+                    defaultValue={tableFilters.location._id}
+                    placeholder="All"
+                    handleChange={store.handleInputChange}
+                />
+                <Dropdown
+                    label="Company:"
+                    list={teams}
+                    name="team"
+                    defaultValue={tableFilters.team._id}
+                    placeholder="All"
+                    handleChange={store.handleInputChange}
+                />
             </div>
             <div className="search-results">
-                <b>4</b> results (of total <b>36</b>)
+                <b>{store.state.filteredMembers.length}</b> results (of total{" "}
+                <b>{store.allMembersCount}</b>)
             </div>
         </div>
     );
-}
+});
+
+export default TableFilters;

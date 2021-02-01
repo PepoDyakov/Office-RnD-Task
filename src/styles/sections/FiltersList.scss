@@ -18,7 +18,7 @@
     @include flex(row, flex-start, center);
     margin-left: auto;
 
-    & > div:not(:last-child) {
-        margin-right: 27px;
+    & > .button-container:not(:last-child) {
+        margin-right: 13px;
     }
 }
